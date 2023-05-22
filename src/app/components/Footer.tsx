@@ -5,7 +5,7 @@
 const Footer = () => {
   return (
     <footer>
-      <p className="bg-red-500">All Rights Reserved. Copyright © 2022</p>
+      <p className="bg-red-500">All Rights Reserved. Copyright © 2023</p>
     </footer>
   );
 };

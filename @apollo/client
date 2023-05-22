@@ -8,7 +8,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticProps() {
  const client = new ApolloClient({
-    uri: 'https://api-us-east-1.hygraph.com/v2/cl2cupjxo4izz01z8fcm26gxf/master',
+    uri: 'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clhz4y4nz2ip801ta2wxd5u5c/master',
     cache: new InMemoryCache(),
  });
  return {
@@ -60,4 +60,3 @@ const data = await client.query({
     };
    }
 
-   
