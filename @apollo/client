@@ -1,0 +1,63 @@
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+
+export async function getStaticProps(context) {
+ return {
+    props: {},
+ }
+}
+
+export async function getStaticProps() {
+ const client = new ApolloClient({
+    uri: 'https://api-us-east-1.hygraph.com/v2/cl2cupjxo4izz01z8fcm26gxf/master',
+    cache: new InMemoryCache(),
+ });
+ return {
+    props: {},
+ };
+}
+
+const data = await client.query({
+    query: gql`
+       query ProductsQuery {
+          products {
+             id
+             name
+             slug
+             price
+             image {
+                url
+             }
+          }
+       }
+    `,
+   });
+
+   export async function getStaticProps() {
+    const client = new ApolloClient({
+       uri: 'https://api-us-east-1.hygraph.com/v2/cl2cupjxo4izz01z8fcm26gxf/master',
+       cache: new InMemoryCache(),
+    });
+    const data = await client.query({
+       query: gql`
+          query ProductsQuery {
+             products {
+                id
+                name
+                slug
+                price
+                image {
+                   url
+                }
+             }
+          }
+       `,
+    });
+    const allProducts = data.data.products;
+    return {
+       props: {
+          allProducts,
+       },
+    };
+   }
+
+   
