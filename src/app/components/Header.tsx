@@ -1,19 +1,15 @@
-// components/Header.js
-
 import Link from "next/link";
-// import styles from "../styles/components/Header.module.css";
+
 const Header = () => {
   return (
-    <nav className="bg-red-500">
+    <nav className="bg-red-500 flex justify-between items-center p-4">
       <Link href="/">
-        <div>
-          <p>
-            PLANTS <span>☘</span>
-          </p>
+        <div className="text-white text-lg cursor-pointer">
+          PLANTS <span>☘</span>
         </div>
       </Link>
-      <div>
-        <span>🛒</span>
+      <div className="text-white flex items-center">
+        <span className="mr-2">🛒</span>
         <p>$0.00</p>
       </div>
     </nav>
