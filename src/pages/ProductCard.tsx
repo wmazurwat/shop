@@ -17,14 +17,21 @@ import { Product } from "../types";
 
 interface ProductCardProps {
   product: Product;
+  addToCart: (product: Product, quantity: number, unit: string) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, addToCart }) => {
   const [quantity, setQuantity] = useState<number>(0);
   const [unit, setUnit] = useState<string>("kg");
 
   const handleQuantityChange = (amount: number) => {
     setQuantity((prev) => Math.max(0, prev + amount));
+  };
+
+  const handleAddToCart = () => {
+    if (quantity > 0) {
+      addToCart(product, quantity, unit);
+    }
   };
 
   return (
@@ -55,7 +62,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <Add />
           </IconButton>
         </div>
-        <Button variant="contained" className="mt-2">
+        <Button variant="contained" className="mt-2" onClick={handleAddToCart}>
           Dodaj produkt
         </Button>
       </CardContent>

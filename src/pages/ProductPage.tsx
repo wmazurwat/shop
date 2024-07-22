@@ -5,6 +5,7 @@ import { Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
 import ShoppingCart from "./ShoppingCart";
 import { Product, CartItem } from "../types";
+import Header from "@/app/components/Header";
 
 interface ProductPageProps {
   products: Product[];
@@ -26,6 +27,7 @@ const ProductPage: React.FC<ProductPageProps> = ({ products }) => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <Header />
       <div className="flex flex-1">
         <div className="w-1/4 p-4 bg-gray-100">
           <ShoppingCart cartItems={cartItems} />
@@ -34,7 +36,7 @@ const ProductPage: React.FC<ProductPageProps> = ({ products }) => {
           <Typography variant="h4" component="div" className="m-4">
             Owoce
           </Typography>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             {products && products.length > 0 ? (
               products.map((product) => (
                 <ProductCard
