@@ -18,7 +18,6 @@ interface HomeProps {
 }
 
 const Home = ({ allProducts }: HomeProps) => {
-  // console.log("allProducts", allProducts);
   return (
     <>
       <Head>
