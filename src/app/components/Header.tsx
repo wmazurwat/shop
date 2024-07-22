@@ -5,7 +5,7 @@ const Header = () => {
     <nav className="bg-red-500 flex justify-between items-center p-4">
       <Link href="/">
         <div className="text-white text-lg cursor-pointer">
-          PLANTS <span>☘</span>
+          Owoce i warzywa - SKLEP <span>☘</span>
         </div>
       </Link>
       <div className="text-white flex items-center">
